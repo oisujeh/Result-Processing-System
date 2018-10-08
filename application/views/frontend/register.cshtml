@@ -1,0 +1,289 @@
+﻿@model theceopay.Models.tbluser
+
+@{
+    ViewBag.Title = "Create Account";
+}
+
+<!-- Page content starts -->
+
+<!-- ==========================
+       LOGIN - START
+   =========================== -->
+<section class="content-item grey" id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Create a new Account</h2>
+                
+                <h3>How to register</h3>
+                <ul class="list-unstyled">
+                   
+                        <li><i class="fa fa-coffee"></i>You just need to fill out the form with your correct details</li>
+                        <li><i class="fa fa-coffee"></i>An email verification link will be sent to your email</li>
+                        <li><i class="fa fa-coffee"></i>Click on the verification link</li>
+                        <li><i class="fa fa-coffee"></i>You will be redirected to the login page</li>
+                        <li><i class="fa fa-coffee"></i>After login, complete the account settings form</li>
+                        <li><i class="fa fa-coffee"></i>verify your mobile number to enable you transact with us</li>
+                   
+                </ul>
+                <p>Already have an account? Sign in with your existing username and password.</p>
+              
+                <a href="home/login" class="btn btn-normal">Sign in</a> to your account.
+            </div>
+            <div class="col-sm-6">
+                <div class="form-wrapper">
+                    <h4>Create Account</h4>
+                    
+                       
+                            @if (TempData["msg"] != null)
+                            {
+
+                                <div class="bg-info bold text-center text-danger ">@TempData["msg"]</div>
+                            }
+                            @using (Html.BeginForm("register", "home", FormMethod.Post, new { @class = "form-horizontal", id = "regform" }))
+                            {
+                                 <fieldset>
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.firstname, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.firstname, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.firstname)
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.surname, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.surname, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.surname)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.email, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.email)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.phone, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.phone, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.phone)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.sex, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-4">
+                                        @Html.DropDownListFor(model => model.sex, ViewBag.thesex as SelectList, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.sex)
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.username, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.username, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.username)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.pwd, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.PasswordFor(model => model.pwd, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.pwd)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.Label("Confirm Password", new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.Password("pwd2", null, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.pwd)
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.referedby, new { @class = "control-label col-lg-2" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBox("referedby", ViewBag.affidthings as object, new { @class = "form-control", placeholder = "Username", @readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.referedby)
+                                    </div>
+                                </div>
+                    <!-- #messages is where the messages are placed inside -->
+                                <div class="form-group">
+                                    <div class="col-md-9 col-md-offset-3">
+                                        <div id="messages"></div>
+                                    </div>
+                                </div>
+                                @*<div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-8">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input name="agree" type="checkbox"> I Agree Terms & Conditions
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>*@
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-8">
+                                        <p>By creating an account, you agree to our <a href="terms_conditions">Terms & Conditions</a> and <a href="privacy_policy">Privacy Policy</a>.</p>
+                                        <button type="submit" class="btn btn-normal">Register</button>
+                                        <button type="reset" class="btn btn-normal">Reset</button>
+                                    </div>
+                                </div>
+</fieldset>
+                            }
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==========================
+    LOGIN - END
+=========================== -->
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#regform').bootstrapValidator({
+                container: '#messages',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    firstname: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The firstname is required and cannot be empty'
+                            },
+                            stringLength: {
+                                            min: 3,
+                                            max: 40,
+                                            message: 'The firstname must be less than 100 and above 3 characters long'
+                                        }
+                        }
+                    },
+                    surname: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The surname is required and cannot be empty'
+                            }
+                            ,
+                            stringLength: {
+                                min: 3,
+                                max: 40,
+                                message: 'The surname must be less than 100 and above 3 characters long'
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The email address is required and cannot be empty'
+                            },
+                            emailAddress: {
+                                message: 'The email address is not valid'
+                            }
+                        }
+                    },
+                    phone: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The phone is required and cannot be empty'
+                            }
+                        }
+                    },
+                    sex: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The sex is required and cannot be empty'
+                            }
+                        }
+                    },
+                    username: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The username is required and cannot be empty'
+                            }
+                            ,
+                            stringLength: {
+                                min: 3,
+                                max: 40,
+                                message: 'The username must be less than 100 and above 3 characters long'
+                            }
+                        }
+                    },
+                    pwd: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The password is required and cannot be empty'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 40,
+                                message: 'The password must be less than 100 and above 6 characters long'
+                            }
+
+                        }
+                    },
+                 pwd2: {
+                validators: {
+                        notEmpty: {
+                            message: 'The confirm password is required and cannot be empty'
+                        },
+                        identical: {
+                            field: "pwd",
+                            message: 'The password does not match'
+                        }
+
+                    }
+                    }
+                    //agree: {
+                    //    validators: {
+                    //        notEmpty: {
+                    //            message: 'You must accept our terms and conditions'
+                    //        }
+                    //    }
+                    //}
+                    //title: {
+                    //    validators: {
+                    //        notEmpty: {
+                    //            message: 'The title is required and cannot be empty'
+                    //        },
+                    //        stringLength: {
+                    //            max: 100,
+                    //            message: 'The title must be less than 100 characters long'
+                    //        }
+                    //    }
+                    //},
+                    //content: {
+                    //    validators: {
+                    //        notEmpty: {
+                    //            message: 'The content is required and cannot be empty'
+                    //        },
+                    //        stringLength: {
+                    //            max: 500,
+                    //            message: 'The content must be less than 500 characters long'
+                    //        }
+                    //    }
+                    //}
+                }
+            });
+        });
+    </script>
+}

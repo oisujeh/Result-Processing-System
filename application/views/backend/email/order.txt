@@ -1,0 +1,8 @@
+Dear {{firstname}},
+
+{{bodyText}}
+
+This email was intended for {{firstname}}, because you signed up for ecxhub.com
+The links in this email will always direct to https://ecxhub.com. Learn about email security and online safety.
+Copyright https://ecxhub.com.
+

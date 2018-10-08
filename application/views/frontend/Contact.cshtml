@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<div class="content contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Contact -->
+           
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="cwell">
+                            <!-- Contact form -->
+                            <h4 class="title">Contact Form</h4>
+                        @using (Html.BeginForm("contact", "home", FormMethod.Post, new { id="contactform" }))
+                        { 
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="fullname">Your Name</label>
+                                    @Html.TextBox("fullname", null, new { @class = "form-control", placeholder = "Enter Name" })
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    @Html.TextBox("email", null, new { @class = "form-control", placeholder = "Enter Email" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="matter">Matter</label>
+                                    @Html.TextArea("matter", new { @class = "form-control", rows = "5" })
+                                   
+                                </div>
+                               
+                                <button type="submit" class="btn btn-default">Send</button>
+                                <button type="reset" class="btn btn-default">Reset</button>
+                            </form>
+                            <hr />
+                        }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="cwell">
+                            <!-- Address section -->
+                            <h4 class="title">Address</h4>
+                            <div class="address">
+                                <address>
+                                    London Opi Street, Off Ogunu Road, Warri, Delta State.
+                                </address>
+
+                                <address>
+                                    <!-- Name -->
+                                    <strong>Email</strong><br>
+                                    <!-- Email -->
+                                    <a href="mailto:#">support@theceopay.com</a>
+                                </address>
+
+                                <!-- Social media icons -->
+                                <strong>Get in touch:</strong>
+                                <div class="social">
+                                    <a href="http://www.facebook.com/theceopay"><i class="fa fa-facebook facebook"></i></a>
+                                    <a href="http://www.facebook.com/theceopay"><i class="fa fa-twitter twitter"></i></a>
+                                  
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page content ends -->
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#contactform').bootstrapValidator({
+                container: '#messages',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    fullname: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The fullname is required and cannot be empty'
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The email address is required and cannot be empty'
+                            },
+                            emailAddress: {
+                                message: 'The email address is not valid'
+                            }
+                        }
+                    },
+                    matter: {
+                        validators: {
+                            notEmpty: {
+                                message: 'You must type a message '
+                            }
+
+                        }
+                    }
+                    //title: {
+                    //    validators: {
+                    //        notEmpty: {
+                    //            message: 'The title is required and cannot be empty'
+                    //        },
+                    //        stringLength: {
+                    //            max: 100,
+                    //            message: 'The title must be less than 100 characters long'
+                    //        }
+                    //    }
+                    //},
+                    //content: {
+                    //    validators: {
+                    //        notEmpty: {
+                    //            message: 'The content is required and cannot be empty'
+                    //        },
+                    //        stringLength: {
+                    //            max: 500,
+                    //            message: 'The content must be less than 500 characters long'
+                    //        }
+                    //    }
+                    //}
+                }
+            });
+        });
+    </script>
+}

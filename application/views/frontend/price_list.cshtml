@@ -1,0 +1,210 @@
+﻿
+@{
+    ViewBag.Title = "price_list";
+}
+
+<form action="/order/" method="POST" id="submit_order">
+    <div class="in-operator-header">
+        <div class="operator-logo-container">
+            <div class="operator-logo">
+                <img alt="MTN Nigeria" class="cld-hidpi" src="https://dafitb341j2qo.cloudfront.net/d_operator.png,h_120,w_180,c_pad/mtn-nigeria.png" sizes="180px" srcset="https://dafitb341j2qo.cloudfront.net/d_operator.png,h_120,w_180,c_pad/mtn-nigeria.png 180w,
+			                  https://dafitb341j2qo.cloudfront.net/d_operator.png,h_240,w_360,c_pad/mtn-nigeria.png 360w">
+            </div>
+        </div>
+        <h2>Refill <var class="phone_number_ltr">+234 703 324 8431</var></h2>
+        <p class="">
+            <var>MTN Nigeria</var>
+            <a class="operator-change-button" href="/nigeria/?change=true&number=%2B2347033248431">Change number or operator</a>
+        </p>
+    </div>
+    <div class="pricelist_wrapper">
+        <h3 class="pricelist">Select refill amount</h3>
+        <input type="hidden" name="operator_slug" value="mtn-nigeria" />
+        <ul class="form-group select-package amount-item-container amount-item-container-list">
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_500" value="500" class="pricelist_item" />
+                <label for="amount_500" class="amount-item-label">
+                    <var class="amount-value">500 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0018 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_600" value="600" class="pricelist_item" />
+                <label for="amount_600" class="amount-item-label">
+                    <var class="amount-value">600 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0022 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_800" value="800" class="pricelist_item" />
+                <label for="amount_800" class="amount-item-label">
+                    <var class="amount-value">800 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0029 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_1000" value="1000" class="pricelist_item" />
+                <label for="amount_1000" class="amount-item-label">
+                    <var class="amount-value">1000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0036 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_1100" value="1100" class="pricelist_item" />
+                <label for="amount_1100" class="amount-item-label">
+                    <var class="amount-value">1100 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0039 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_1200" value="1200" class="pricelist_item" />
+                <label for="amount_1200" class="amount-item-label">
+                    <var class="amount-value">1200 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0043 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_1500" value="1500" class="pricelist_item" />
+                <label for="amount_1500" class="amount-item-label">
+                    <var class="amount-value">1500 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0053 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_1800" value="1800" class="pricelist_item" />
+                <label for="amount_1800" class="amount-item-label">
+                    <var class="amount-value">1800 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0064 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_2000" value="2000" class="pricelist_item" checked="checked" />
+                <label for="amount_2000" class="amount-item-label">
+                    <var class="amount-value">2000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0071 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_2200" value="2200" class="pricelist_item" />
+                <label for="amount_2200" class="amount-item-label">
+                    <var class="amount-value">2200 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0078 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_2400" value="2400" class="pricelist_item" />
+                <label for="amount_2400" class="amount-item-label">
+                    <var class="amount-value">2400 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0085 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_3000" value="3000" class="pricelist_item" />
+                <label for="amount_3000" class="amount-item-label">
+                    <var class="amount-value">3000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0105 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_5000" value="5000" class="pricelist_item" />
+                <label for="amount_5000" class="amount-item-label">
+                    <var class="amount-value">5000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0175 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_7000" value="7000" class="pricelist_item" />
+                <label for="amount_7000" class="amount-item-label">
+                    <var class="amount-value">7000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0245 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_10000" value="10000" class="pricelist_item" />
+                <label for="amount_10000" class="amount-item-label">
+                    <var class="amount-value">10000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.035 BTC</var>
+                </label>
+            </li>
+            <li class="amount-item">
+                <input type="radio" name="amount" id="amount_15000" value="15000" class="pricelist_item" />
+                <label for="amount_15000" class="amount-item-label">
+                    <var class="amount-value">15000 NGN</var>
+                    <span class="amount-separator">you pay</span>
+                    <var class="amount-btc">0.0525 BTC</var>
+                </label>
+            </li>
+        </ul>
+        <input type="hidden" name="topup_value" id="selected_amount" />
+        <p class="input-hint">
+            The selected amount will automatically be added to the target account once the payment is complete
+        </p>
+    </div>
+    <div class="deals">
+        <h3 class="pricelist">Current deals</h3>
+        <ul>
+            <li>
+                <a class="deal" href="#">
+                    <strong notranslate>Orange Niger 100% Extra Bonus</strong>
+                    <span>
+                        Minimum refill amount: <var>5 USD</var>
+                    </span>
+                    <span href="#" class="terms">Terms and conditions apply</span>
+                    <div class="termsContainer">
+                        <p notranslate>Orange Niger 100% Extra Bonus</p>
+                        <p notranslate>Promotion type:200% Bonus <br>Operator:MTN Nigeria <br>Date:23rd of November 2016 - 2nd of February 2016 (Time in Nigeria)<br>Minimum amount: $5USD<br>Promotional bonus validity: 30 days for airtime and 7 days for data bonus<br>Terms and Conditions:<br>200% recharge bonus on every recharge from 100N and above<br>National calls and National SMS are off net and on net <br>The bonus airtime will be available for national calls, national SMS and PAYG data.<br>10MB data when customers recharge with N100.00 airtime or more<br>The data bonus will be awarded only once a week. (i.e. on first recharge of N100 & above, subsequent eligible recharges in the same week will not attract a 10MB data bonus).<br> Customer will only enjoy the 200% bonus while they are on the Beta Talk Plan. If they migrate out to any other existing tariff plan they lose all the bonus</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pricelist_wrapper email-section">
+        <h3>Your email</h3>
+        <input type="hidden" name="number" id="number" readonly="readonly" class="form-control input-md" value="+2347033248431">
+        <div class="input-group email-input">
+            <span class="input-group-addon"><span class="input-text input-icon input-icon-email"></span></span>
+            <var><input type="text" name="email" id="form_email" class="form-control input-md" placeholder="your@email.com" value="chijibson@gmail.com"></var><br />
+        </div>
+        <p class="input-hint">
+            The email is used to send you status updates about your order
+        </p>
+    </div>
+    <div class="details-section">
+        <div class="operator-confirmation">
+            <h3>Confirm Order Details</h3>
+            <label for="form_number_verified">
+                <span class="operator-confirmation-check">
+                    <input type="checkbox" id="form_number_verified" />
+                    <span class="operator-confirmation-check-marker"></span>
+                </span>
+                <span class="operator-confirmation-check-label">
+                    I want to send a <var id="operator-confirmation-amount"></var> refill for <var><strong>MTN Nigeria</strong></var>
+                    to the number <var><strong id="formatted_number">+234 703 324 8431</strong></var>. <a href="/nigeria/?change=true&number=%2B2347033248431">Change number or operator?</a>
+                </span>
+            </label>
+        </div>
+        <div class="operator-page-button-group">
+            <input name="payment_method" type="hidden" value="bitpay" />
+            <button id="confirm_payment" class="btn btn-success confirm-pay pay-with-bitpay" type="submit">
+                <img src="/images/bitcoin-logo.svg" width="20" class="btn-svg" />
+                To payment
+            </button>
+        </div>
+    </div>
+</form>

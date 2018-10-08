@@ -1,0 +1,287 @@
+﻿@model theceopay.Models.recharges
+
+
+
+<!-- ==========================
+      JUMBOTRON - START
+  =========================== -->
+<section class="jumbotron jumbotron-carousel">
+    <div id="homepage-1-carousel" class="nav-inside owl-animation">
+
+        <!-- SLIDESHOW ITEM - START -->
+        <div class="item slide-1">
+            <div class="slide-mask"></div>
+            <div class="slide-body">
+                <div class="container">
+                    <h2 class="animation top-to-bottom slow"><span style="color:#d4ba1f">Bit</span>coin<span style="color:#d4ba1f">360</span>ex</h2>
+                    <h3 class="animation bottom-to-top slow delay-1">We buy at &#8358;@ViewBag.webuy, We sell at &#8358;@ViewBag.wesell</h3>
+                  
+                    <a href="/" class="btn btn-normal animation bottom-to-top slow delay-2" target="_blank">How to Buy</a>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDESHOW ITEM - END -->
+        <!-- SLIDESHOW ITEM - START -->
+        <div class="item slide-2">
+            <div class="slide-mask"></div>
+            <div class="slide-body">
+                <div class="container">
+                    <h2 class="animation right-to-left delay-1"><span style="color:#d4ba1f">Bit</span>Recharge <span class="color">Feature</span></h2>
+                    <ul class="list-unstyled">
+                        <li class="animation right-to-left delay-2">Topup your phone</li>
+                        <li class="animation right-to-left delay-3">In any country</li>
+                        <li class="animation right-to-left delay-4">With Bitcoin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDESHOW ITEM - END -->
+        <!-- SLIDESHOW ITEM - START -->
+        <div class="item slide-3">
+            <div class="slide-mask"></div>
+            <div class="slide-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-11 col-lg-10">
+                            <h2 class="animation top-to-bottom delay-1">Sell BTC Today</h2>
+                            <p class="animation bottom-to-top delay-2">Get Instant transfer for your urgent financial need</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SLIDESHOW ITEM - END -->
+
+    </div>
+</section>
+<!-- ==========================
+    JUMBOTRON - END
+=========================== -->
+
+
+
+<!-- ==========================
+    SERVICES - START
+=========================== -->
+<section class="content-item" id="services">
+    <div class="container">
+        <div class="content-headline">
+            <h2>What We Do</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fa fa-money"></i>
+
+                <h4>Bitcoin Exchange</h4>
+                <p>Buy/Sell BTC on Bitcoin360ex.com <br />
+                Instant funding at affordable rate
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <script type="text/javascript">var cf_widget_size = "medium"; var cf_widget_from = "BTC"; var cf_widget_to = "btc"; var cf_clearstyle = true;</script>
+                <script src="https://www.worldcoinindex.com/content/widgets/js/render_widget-min.js" type="text/javascript"></script>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-mobile"></i>
+                <h4>Buy Airtime with Bitcoin</h4>
+                <p>Topup your prepaid mobile phone with Bitcoin <br />
+                Instant airtime on the go 24/7
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- ==========================
+    SERVICES - END
+=========================== -->
+
+
+
+<!-- ==========================
+    BUY AIRTIME - START
+=========================== -->
+<section class="content-item" id="services">
+    <div class="container">
+        <div class="content-headline">
+            <h2>BITCOIN CALCULATOR </h2>
+            <h3>
+                Calculate the price to buy or sell Bitcoin
+            </h3>
+        </div>
+        <div class="row">
+
+
+            <div class="col-md-12">
+                @if (TempData["msg"] != null)
+                {
+
+                    <div class="bg-info bold text-center text-danger ">@TempData["msg"]</div>
+                    <br />
+                }
+                
+
+                <div class="form-inline">
+
+                
+                    @*<div class="form-group">
+
+                        <select class="form-control" name="selectecurrency" id="selectecurrency">
+                            <option value="NGN">NGN</option>
+                            <option value="USD">USD</option>
+                        </select>
+
+
+                    </div>*@
+                 
+                    <div class="form-group">
+
+                        <select class="form-control" name="type" id="type">
+                            <option value="buy">Buy</option>
+                            <option value="sell">Sell</option>
+                        </select>
+                       
+
+                    </div>
+                  
+
+                    <div class="form-group">
+
+                        <div class="input-group" id="amountlist">
+                            <div class="input-group-addon" id="currency">BTC</div>
+                            <input type="text" class="form-control" id="amountbtc" name="amountbtc" />
+
+                        </div>
+                    </div>
+                   
+                <div class="form-group">
+
+                    <div class="input-group" id="amountlist">
+                        <div class="input-group-addon" id="currency1">NGN</div>
+                        <input type="text" class="form-control" id="amountngn" name="amountngn" />
+
+                    </div>
+                </div>
+                    <a href="/memberarea/buy_order" class="btn btn-primary">Proceed</a>             
+                    </div>
+
+
+
+
+            </div>
+        </div>
+        <!-- ==========================
+        BUY AIRTIME - START
+    =========================== -->
+        <section class="content-item" id="services">
+            <div class="container">
+                <div class="content-headline">
+                    <h2>AIRTIME CALCULATOR</h2>
+                    <h3>
+                        Top up prepaid mobile phones with bitcoin
+                        in Nigeria and around the world
+                    </h3>
+                </div>
+                <div class="row">
+
+
+                    <div class="col-md-6 col-md-offset-3">
+                        @if (TempData["msg"] != null)
+                        {
+
+                            <div class="bg-info bold text-center text-danger ">@TempData["msg"]</div>
+                            <br />
+                        }
+                        @using (Html.BeginForm("index", "home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+
+                            <div class="form-group">
+
+                                @Html.DropDownListFor(model => model.country, ViewBag.thecountries as IEnumerable<SelectListItem>, new { @class = "form-control", id = "icountries", onchange = "refreshCountry(this.value);" })
+
+                                @Html.ValidationMessageFor(model => model.country)
+
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.network)
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="input-group" id="amountlist">
+                                    <div class="input-group-addon" id="currency">@ViewBag.currency</div>
+                                    @Html.Hidden("tcurrency", (string)ViewBag.currency)
+                                    @Html.TextBoxFor(model => model.amount, new { @class = "form-control" })
+                                    @Html.Hidden("price_in_btc")
+                                    @Html.Hidden("price_in_usd")
+
+
+                                </div>
+                            </div>
+                            <div id="loading">
+
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => model.phone, new { @class = "form-control", placeholder = "Phone Number" })
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBox("email", null, new { @class = "form-control", placeholder = "Email Address" })
+                            </div>
+
+
+                            <button type="submit" class="btn btn-danger">Pay with BTC</button>
+
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==========================
+        BUY AIRTIME - END
+    =========================== -->
+
+        
+    </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================
+    CONTACT - START
+=========================== -->
+@*<section class="content-item" id="contact">
+    <div class="container">
+        <div class="content-headline">
+            <h2>FACEBOOK FEEDBACK</h2>
+            <h3>Testimonies from our clients</h3>
+        </div>
+       
+    </div>
+</section>*@
+<!-- ==========================
+    CONTACT - END
+=========================== -->
+
+<section class="content-item">
+    <div class="container">
+        <div class="content-headline">
+            <h2>We Accept</h2>
+            
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+
+                <img src="images/paymentoptions.PNG" class="img-responsive"  />
+          
+        </div>
+    </div>
+</section>
